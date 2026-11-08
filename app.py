@@ -319,7 +319,7 @@ def generate_flame_geometry_plot(telemetry: dict) -> go.Figure:
                 y=yi,
                 colorscale="Inferno" if telemetry["aspect_ratio"] > 1.8 else "IceFire",
                 contours=dict(showlabels=True, labelfont=dict(size=9, color="white")),
-                colorbar=dict(title="T (K)", titleside="right"),
+                colorbar=dict(title=dict(text="T (K)", side="right")),
                 opacity=0.75,
                 hoverinfo="x+y+z",
             )
@@ -368,7 +368,7 @@ def generate_flame_geometry_plot(telemetry: dict) -> go.Figure:
         fig.update_layout(
             title=f"Morfología de la Llama: {telemetry['combustion_regime']}",
             title_font=dict(family="Chakra Petch", size=16, color="#e2e8f0"),
-            xaxis=dict(title="Posición Radial X (mm)", zeroline=True, gridcolor="#1e293b", scaleanchor="y", scaleratio=1),
+            xaxis=dict(title="Posición Radial X (mm)", zeroline=True, gridcolor="#1e293b"),
             yaxis=dict(title="Posición Axial Y (mm)", zeroline=True, gridcolor="#1e293b"),
             paper_bgcolor="#07090e",
             plot_bgcolor="#0b0f19",
